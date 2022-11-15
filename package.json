@@ -1,0 +1,23 @@
+{
+  "name": "intoiter",
+  "version": "0.0.1",
+  "description": "Library for work with iterable objects",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ireneBird/IntoIter.git"
+  },
+  "keywords": [
+    "iterable",
+    "iterators"
+  ],
+  "author": "Irina Nesterenko <i.irenesterenko@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ireneBird/IntoIter/issues"
+  },
+  "homepage": "https://github.com/ireneBird/IntoIter#readme"
+}
