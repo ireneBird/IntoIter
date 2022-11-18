@@ -1,5 +1,5 @@
 import { intoIter } from '../../lib'
-import { sum } from '../../lib/agregators/sum'
+import { sum } from '../../lib/methods'
 
 describe("Test function SUM", () => {
   it("should return sum of all numeric elements", () => {

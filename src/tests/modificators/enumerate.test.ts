@@ -1,5 +1,5 @@
 import { intoIter } from '../../lib';
-import { enumerate } from '../../lib/enumerate';
+import { enumerate } from '../../lib/methods';
 
 describe("enumerate function", () => {
   it('should add indexes', () => {

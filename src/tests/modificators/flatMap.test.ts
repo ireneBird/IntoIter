@@ -1,5 +1,5 @@
-import { intoIter, IntoIter } from '../../lib'
-import { isIterable } from '../../lib/utils';
+import { intoIter } from '../../lib'
+
 
 describe("flat test", () => {
   it("Shoud return flat obj for intoIter func (sync)", () => {
