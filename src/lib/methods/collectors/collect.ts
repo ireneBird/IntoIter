@@ -4,29 +4,20 @@ type Collectable<T> =
   { set(key: number, value: T): void };
 
 
-export function collect<T>(iterable: Iterable<T>, collection: Collectable<T>) {
-
-
+export function* collect<T>(iterable: Iterable<T>, collection: Collectable<T>) {
+  let index = 0;
+  switch (collection?.constructor) {
+    case Map:
+    case Set:
+      for (const v of Object.values(iterable))
+        yield [index++, v]
+      break
+    case Array:
+      for (const v of Object.values(iterable))
+        yield v
+      break
+    default:
+      yield iterable
+  }
 }
 
-// function* values(t) {
-//   switch (t?.constructor) {
-//     case Object:
-//     case Array:
-//       for (const v of Object.values(t))
-//         yield* values(v)
-//       break
-//     default:
-//       yield t
-//   }
-// }
-
-// function* numbers<T>(iterable: Iterable<T>) {
-//   for (const v of iterable) {
-//     switch (v?.constructor) {
-//       case Number:
-//         if (!Number.isNaN(v))
-//           yield v
-//     }
-//   }
-// }
