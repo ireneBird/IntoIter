@@ -1,4 +1,5 @@
-import { enumerate, filter, flat, flatMap, map, sum } from './methods';
+import { avg, enumerate, filter, flat, flatMap, map, max, min, sum, toArray } from './methods';
+import { AggregationValue } from './types';
 
 interface SyncIterData<T> extends Iterable<T> {
   reverse?: () => SyncIterData<T>
@@ -55,8 +56,23 @@ export class SyncIter<T>   {
     return enumerate(this.#data);
   }
 
-  sum(): Generator<number> {
+  sum(): AggregationValue {
     return sum(this.#data)
   }
 
+  avg(): AggregationValue {
+    return avg(this.#data);
+  }
+
+  max(): number {
+    return max(this.#data);
+  }
+
+  min(): number {
+    return min(this.#data);
+  }
+
+  toArray(): Array<T> {
+    return toArray(this.#data);
+  }
 }
