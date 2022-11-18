@@ -1,10 +1,12 @@
-type Collectable<T> =
+// import { Collectable } from '../../types';
+
+export type Collectable<T> =
   { push(value: T): void } |
   { add(value: T): void } |
   { set(key: number, value: T): void };
 
 
-export function* collect<T>(iterable: Iterable<T>, collection: Collectable<T>) {
+export function* collect<T>(iterable: Iterable<T>, collection: Collectable<T>): Generator<T | [PropertyKey, T]> {
   let index = 0;
   switch (collection?.constructor) {
     case Map:
@@ -17,7 +19,8 @@ export function* collect<T>(iterable: Iterable<T>, collection: Collectable<T>) {
         yield v
       break
     default:
-      yield iterable
+      return;
   }
 }
 
+// console.log(...collect('art', new Set()))

@@ -1,5 +1,5 @@
-import { avg, enumerate, filter, flat, flatMap, map, max, min, sum, toArray } from './methods';
-import { AggregationValue } from './types';
+import { avg, collect, enumerate, filter, flat, flatMap, map, max, min, sum, toArray } from './methods';
+import { AggregationValue, Collectable } from './types';
 
 interface SyncIterData<T> extends Iterable<T> {
   reverse?: () => SyncIterData<T>
@@ -74,5 +74,9 @@ export class SyncIter<T>   {
 
   toArray(): Array<T> {
     return toArray(this.#data);
+  }
+
+  collect(collection: Collectable<T>): Generator<T | [PropertyKey, T]> {
+    return collect(this.#data, collection);
   }
 }

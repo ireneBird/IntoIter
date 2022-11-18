@@ -11,3 +11,4 @@ export { max } from './agregators/max';
 export { min } from './agregators/min';
 
 export { toArray } from './collectors/toArray';
+export { collect } from './collectors/collect';
