@@ -1,3 +1,7 @@
-.vscode
-/node_modules
-.DS_Store
+## Библиотека IntoIter для работы с iterable объектами 
+
+
+
+
+
+
