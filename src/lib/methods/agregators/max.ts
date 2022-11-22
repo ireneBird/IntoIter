@@ -1,4 +1,3 @@
-import { filter } from '../modificators/filter'
 
 export function max<T>(iterable: Iterable<T>, field?: string): number {
   let max = -Infinity;

@@ -1,4 +1,5 @@
-import { cast, isIterable } from '../../utils';
+import { cast, isIterable } from '../../helpers/utils';
+
 
 
 export function* flatMap<T, R>(iterable: Iterable<T>, cb: (el: T, i: number, data: Iterable<T>) => Iterable<R>): Generator<R> {

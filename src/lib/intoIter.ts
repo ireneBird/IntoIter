@@ -1,7 +1,7 @@
 import { AsyncIter } from './asyncIter';
 import iterableNumber from './helpers/iterableNumber';
+import { cast } from './helpers/utils';
 import { SyncIter } from './syncIter';
-import { cast } from './utils';
 
 
 function intoIter<T>(data: number): SyncIter<T>;
