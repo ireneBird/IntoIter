@@ -1,4 +1,4 @@
-import { avg, collect, enumerate, filter, flat, flatMap, map, max, min, sum, toArray } from './methods';
+import { avg, collect, enumerate, filter, flatten, flatMap, map, max, min, sum, toArray } from './methods';
 import { AggregationValue, Collectable } from './types';
 
 interface SyncIterData<T> extends Iterable<T> {
@@ -41,7 +41,7 @@ export class SyncIter<T>   {
   }
 
   flat(depth: number = 1) {
-    return flat(this.#data, depth);
+    return flatten(this.#data, depth);
   }
 
   flatMap<R>(cb: (el: T, index: number, data: Iterable<T>) => Iterable<R>): Iterable<R> {

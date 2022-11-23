@@ -9,3 +9,13 @@ export function sum<T>(iterable: Iterable<T>): AggregationValue {
   }
   return sum;
 }
+
+export async function asyncSum<T>(iterable: AsyncIterable<T>): Promise<number> {
+  let sum = 0;
+  for await (const el of iterable) {
+    if (typeof el == 'number') {
+      sum += el;
+    }
+  }
+  return sum;
+}
