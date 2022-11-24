@@ -39,7 +39,7 @@ export class AsyncIter<T> {
     return asyncMap(this.#data, cb);
   }
 
-  flat(depth: number = 1) {
+  flatten(depth: number = 1) {
     return asyncFlatten(this.#data, depth);
   }
 

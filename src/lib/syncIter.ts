@@ -40,7 +40,7 @@ export class SyncIter<T>   {
     return map(this.#data, cb);
   }
 
-  flat(depth: number = 1) {
+  flatten(depth: number = 1) {
     return flatten(this.#data, depth);
   }
 
